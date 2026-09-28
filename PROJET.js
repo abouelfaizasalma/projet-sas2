@@ -23,13 +23,13 @@ do{
 
     switch (choix) {
         case 1:
-            ajouterunCandidat();
+            AjouterunCandidat();
            break;
 
         case 2:
-           console.log("ajouter un candidas");
+            AjouterPlusieursCandidats();  
            break;
-
+  
         case 3:
             console.log("ajouter un candidas");
             break;
@@ -64,7 +64,7 @@ do{
  
 }while(choix !== 0);
 
-function ajouterunCandidat(){
+function AjouterunCandidat(){
     const CIN = prompt("Entrez le CIN  : ");
     for(let i = 0; i < candidats.length; i++){
         if(candidats[i].CIN === CIN){
@@ -89,6 +89,14 @@ candidats.push( noveauCandidat);
 console.log("Candidat ajouté avec succès !");  
 
 } 
+function AjouterPlusieursCandidats() {
+
+    const nombre = parseFloat(prompt("Combien de candidats voulez-vous ajouter ? "));
+     for (let i = 0; i < nombre; i++) {
+         console.log("Candidat numéro " + (i + 1));
+           AjouterunCandidat();
+    }
+}
 
 
 
